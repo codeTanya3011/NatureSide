@@ -1,0 +1,115 @@
+{% load static %}
+<html >
+<head>
+	<title>Facts about nature</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="{% static 'css/my_styles.css' %}" type="text/css" media="all" />
+	<link rel="shortcut icon" href="images/favicon_ico.svg" />
+</head>
+<body>
+<div class="shell">
+	<div class="border">
+
+		<div id="navigation">
+			<ul class="active">
+			    <li><a href="/">Головна сторінка</a></li>
+			    <li><a href="/admin">Адмін панель</a></li>
+			</ul>
+		</div>
+
+		<div id="main">
+			<div id="content" class="left">
+
+				<div class="project" style="text-align: center;">
+					<h2>{{ single.title }}</h2>
+    {% if single.img %}
+        <p>
+            <img src="{{ single.img.url }}" style="display: block; margin-left: auto; margin-right: auto; width: 50%; max-width: 600px; max-height: 400px; object-fit: contain"/>
+        </p>
+    {% endif %}
+
+    <!-- Отображение видео, если загружено -->
+    {% if single.video %}
+        <p>
+            <video width="50%" controls style="max-width: 600px; max-height: 400px; object-fit: contain;">
+                <source src="{{ single.video.url }}" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </p>
+    {% endif %}
+
+    <!-- Отображение аудио, если загружено -->
+    {% if single.audio %}
+        <p>
+            <audio controls>
+                <source src="{{ single.audio.url }}" type="audio/mpeg">
+                Ваш браузер не поддерживает аудио.
+            </audio>
+        </p>
+    {% endif %}
+					<div class="item">
+						  <div class="text left">
+							  <hr><p>{{ single.description }}</p>
+							  <h4>Автор: {{ single.author }}</h4>
+							  <hr>
+						  </div>
+						  <div class="cl">&nbsp;</div>
+					</div>
+				</div>
+			</div>
+<div class="likes" style="text-align: center;">
+    <br>
+    <p>Сподобалось: {{ single.likes_set.count }}</p>  <!-- Считаем количество лайков -->
+
+    {% if ip_user in liked_ips %}
+        <p>Ви вже лайкнули цю публікацію!</p>
+    {% else %}
+        <a href="{% url 'add_like' single.id %}">Лайк</a>
+    {% endif %}
+
+    <br>
+</div>
+
+			<div class="comment" style="text-align: center;">
+                <h5>ЗАЛИШИТИ КОМЕНТАР:</h5>
+                <div>
+					<form action="{% url 'add_comment' single.id %}" method="post">
+                        {% csrf_token %}
+                        <div>
+                            <label>Ваш коментар:</label>
+                            <textarea name="text_comments"></textarea>
+                        </div>
+						<div>
+                            <label>Ваше ім'я *</label>
+                            <input type="text" name="name">
+                        </div>
+                        <div>
+                            <label>Ваша пошта *</label>
+                            <input type="email" name="email">
+                        </div>
+                        <div><input type="submit"></div>
+                    </form>
+                </div>
+            </div>
+            <div>
+                {% for comment in single.comment_set.all %}
+                <div class="view-comment" style="text-align: center;">
+                    <h4>{{ comment.name }}</h4>
+                    <p>
+                        {{ comment.text_comments }}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+			<div class="cl">&nbsp;</div>
+		</div>
+
+
+	</div>
+
+	<div id="footer" style="text-align: center;">
+		<p class="copy right">Copyright &copy; NatureFacts 2025 </p>
+	</div>
+</div>
+</body>
+</html>
