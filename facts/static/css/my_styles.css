@@ -1,39 +1,39 @@
 .navbar {
     display: flex; 
-    justify-content: space-around; /* Размещает ссылки по краям */
-    align-items: center; /* Выравнивает по вертикали */
-    background-color: #f2e1f4; /* Цвет фона */
-    padding: 15px 20px; /* Внутренние отступы */
+    justify-content: space-around; /* По краям */
+    align-items: center; /*По вертикалі */
+    background-color: #f2e1f4; /* Фон */
+    padding: 15px 20px; /* Внутрішні відступи */
+    font-size: 16px; /* Шрифт*/
 }
 
 .navbar a {
-    color: #400c45; /* Цвет текста */
-    text-decoration: none; /* Убираем подчеркивание */
+    color: #400c45; /* Колір тексту */
+    text-decoration: none; /* Підкреслювання - */
     font-size: 18px;
-    padding: 10px 15px; /* Внутренние отступы ссылок */
-    border-radius: 5px; /* Скругленные углы */
+    padding: 10px 15px; /* Внутрішні відступи */
+    border-radius: 5px; /* Заокруглені угли */
 }
 
 .navbar a:hover {
-    background-color: #a458b9; /* Цвет при наведении */
+    background-color: #a458b9; /*Колір при наведенні */
 }
 
 
 .project {
-    display: flex; /* Располагаем элементы в ряд */
-    flex-wrap: wrap; /* Перенос на новую строку, если не помещается */
-    gap: 20px; /* Отступы между элементами */
-    padding: 20px; /* Внутренний отступ контейнера */
-    justify-content: center; /* Выравнивание по центру */
+    display: flex; /* В рядок */
+    flex-wrap: wrap; /* Перенесення на новий рядок, якщо не міститься */
+    gap: 20px; /* Відступи між елементами */
+    padding: 20px; /* Внутр. відступи контейнера */
+    justify-content: center; /* Виравнювання по центру */
 }
 
 .item {
-    background: #f2e1f4; /* Светлый фон для карточек */
-    border-radius: 10px; /* Скругление углов */
-    padding: 15px; /* Внутренние отступы */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
-    width: 600px; /* Фиксированная ширина */
-    text-align: center;
+    background: #f2e1f4; /* Фон для карток */
+    border-radius: 10px; /* Заокруглення */
+    padding: 15px;
+    width: 600px; /* Фіксована ширина */
+    text-align: center; /* Центрування */
 }
 
 .text {
@@ -41,15 +41,15 @@
 }
 
 img, video, audio {
-    width: 100%; /* Адаптивное отображение медиа */
-    border-radius: 8px; /* Скругление углов */
+    width: 100%; /* Адаптив відео */
+    border-radius: 8px;
 }
 
 .container {
     display: flex;
     justify-content: space-around;
     list-style: none;
-    width: 100%; /* Чтобы заняло всю ширину */
+    width: 100%; /* На всю ширину */
 }
 
 .item {
@@ -59,6 +59,6 @@ img, video, audio {
 }
 
 .media-item {
-    max-width: 100%; /* Максимальна ширина елементів, щоб вони не виходили за межі контейнера */
+    max-width: 100%; /* Максимальна ширина елементів */
     margin: 0 auto; /* Центрування елементів */
 }

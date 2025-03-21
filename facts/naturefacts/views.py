@@ -22,8 +22,8 @@ class AddCommentView(View):
     def post(self, request, pk):
         form = CommentsForm(request.POST)
         if form.is_valid():
-            comment = form.save(commit=False)  # Правильное сохранение формы
-            comment.post_id = pk  # Привязываем комментарий к публикации
+            comment = form.save(commit=False)
+            comment.post_id = pk  # Привязка комментаря до публикації
             comment.save()
         return redirect(f'/{pk}')
 
@@ -46,10 +46,10 @@ class AddLikeView(View):
 
 class RemoveLikeView(View):
     def get(self, request, pk):
-        ip_user = get_user_ip(request)  # Получаем IP пользователя
+        ip_user = get_user_ip(request)  # Отримуємо IP
         publication = get_object_or_404(Publication, pk=pk)
 
-        # Удаляем лайк, если он существует
+        # Видаляемо лайк, якщо він уже є
         Likes.objects.filter(ip=ip_user, post_id=pk).delete()
 
         return redirect(f'/{pk}')

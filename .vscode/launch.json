@@ -14,7 +14,7 @@
             ],
             "django": true,
             "autoStartBrowser": false,
-            "program": "${workspaceFolder}//NatureSite//facts//manage.py"
+            "program": "${workspaceFolder}//facts//manage.py"
         }
     ]
 }

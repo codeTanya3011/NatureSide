@@ -25,7 +25,7 @@ class Comment(models.Model):
     name = models.CharField('Имя', max_length=50)
     text_comments = models.TextField('Текст коментаря', max_length=2000)
     post = models.ForeignKey(Publication, verbose_name='Публікація', on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)  # Добавляем дату создания
+    created_at = models.DateTimeField(auto_now_add=True)  # Дата
 
     def __str__(self):
         return f'{self.name}, {self.post}'

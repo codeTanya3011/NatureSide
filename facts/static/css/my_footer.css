@@ -1,0 +1,10 @@
+
+.footer {
+    display: flex; 
+    justify-content: space-between; /* По краям */
+    align-items: center; /* По вертикалі */
+    background-color: #f2e1f4; /* Фон */
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 16px; /* Шрифт розмір */
+}

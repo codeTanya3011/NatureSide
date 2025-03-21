@@ -1,10 +1,10 @@
 {% load static %}
-<html >
+<html>
 <head>
-	<title>Facts about nature</title>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="{% static 'css/my_styles.css' %}" type="text/css" media="all" />
-	<link rel="shortcut icon" href="images/favicon_ico.svg" />
+	<title>FactsNature</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href="{% static 'css/my_styles.css' %}" type="text/css" media="all"/>
+	<link rel="shortcut icon" href="images/favicon_ico.svg"/>
 </head>
 <body>
 <div class="shell">
@@ -28,22 +28,20 @@
         </p>
     {% endif %}
 
-    <!-- Отображение видео, если загружено -->
     {% if single.video %}
         <p>
             <video width="50%" controls style="max-width: 600px; max-height: 400px; object-fit: contain;">
                 <source src="{{ single.video.url }}" type="video/mp4">
-                Ваш браузер не поддерживает видео.
+                Ваш браузер не підтримує відео.
             </video>
         </p>
     {% endif %}
 
-    <!-- Отображение аудио, если загружено -->
     {% if single.audio %}
         <p>
             <audio controls>
                 <source src="{{ single.audio.url }}" type="audio/mpeg">
-                Ваш браузер не поддерживает аудио.
+                Ваш браузер не підтримує аудіо.
             </audio>
         </p>
     {% endif %}
@@ -59,7 +57,7 @@
 			</div>
 <div class="likes" style="text-align: center;">
     <br>
-    <p>Сподобалось: {{ single.likes_set.count }}</p>  <!-- Считаем количество лайков -->
+    <p>Сподобалось: {{ single.likes_set.count }}</p>
 
     {% if ip_user in liked_ips %}
         <p>Ви вже лайкнули цю публікацію!</p>
