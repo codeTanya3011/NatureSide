@@ -1,28 +1,27 @@
 {% load static %}
 
-{% block css %}
-    <link rel="stylesheet" href="{% static 'css/my_footer.css' %}">
-{% endblock %}
 
-<footer class="bg-custom">
-<div class="main-footer">
-    <div class="social-links">
+<footer class="footer-wrapper">
+<div class="content_footer">    
+    <div class="main-footer">
         <a href="https://t.me/sweet_girl_669" target="_blank">
-            <img src="{% static "images/telegram.svg" %}" alt="Telegram" class="icon_footer">
-        </a>
-        <a href="https://instagram.com/_greenlife_623" target="_blank">
-            <img src="{% static "images/instagram.svg" %}" alt="Instagram" class="icon_footer">
+            <img src="{% static 'images/telegram.svg' %}" alt="Telegram" class="icon_footer">
         </a>
         <a href="viber://chat?number=+380936170935&draft=$hello" target="_blank">
-            <img src="{% static "images/viber.svg" %}" alt="Viber" class="icon_footer">
+            <img src="{% static 'images/viber.svg' %}" alt="Viber" class="icon_footer">
         </a>
-    </div>
-    <div class="footer_copy">
-        <p class="text-center"><em>Copyright &copy;NatureFacts codeTanya3011 2025</em></p>
-    </div>
-    <div class="privacy">
-        <a href="{% url 'facts:privacy-policy' %}"><em>Privacy Policy</em></a>
-        {% comment %} <a href="{% url 'facts:terms-and-conditions' %}" class="mx-4"><em>Terms and Conditions</em></a> {% endcomment %}
+        <a href="https://instagram.com/_greenlife_623" target="_blank">
+            <img src="{% static 'images/instagram.svg' %}" alt="Instagram" class="icon_footer">
+        </a>
+        <div class="copy-right">
+            <p><em>Copyright &copy;NatureFacts codeTanya3011 2025</em></p>
+        </div>
+        <div class="copy-right">
+            <a href="{% url 'privacy_policy' %}"><strong>Privacy Policy</strong></a>
+
+            {% block info %}{% endblock %}
+
     </div>
 </div>
 </footer>
+

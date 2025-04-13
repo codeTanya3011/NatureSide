@@ -2,9 +2,10 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/my_footer.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
 {% endblock %}
 
-{% block content %}
+{% block info %}
 
 <div class="information">
     <h1>Privacy Policy</h1>
@@ -60,15 +61,10 @@
 
     <h2>9. Contact Information</h2>
     <p>If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us:</p>
-        <div class="contacts">
+        <div class="contacts" style='text-align: center;'>
                 {% include "includes/contacts.html" %}
         </div>
 </div>
 
 {% endblock %}
 
-{% block footer %}
-    <div class="main-footer">
-        {% include "includes/footer.html" %}
-    </div>
-{% endblock %}

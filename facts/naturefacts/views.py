@@ -8,14 +8,14 @@ from .models import Publication, Likes, Comment
 class PublicationView(View):
     def get(self, request):
         publication = Publication.objects.all()
-        return render(request, 'facts/home_screen.html', {'publication_list': publication})
+        return render(request, 'home_screen.html', {'publication_list': publication})
 
 
 class SingleEntryView(View):
     def get(self, request, pk):
         single = Publication.objects.get(id=pk)
         liked_ips = Likes.objects.filter(post=single).values_list('ip', flat=True)  # Отримуємо список IP
-        return render(request, 'facts/single_entry.html', {'single': single, 'liked_ips': list(liked_ips)})
+        return render(request, 'single_entry.html', {'single': single, 'liked_ips': list(liked_ips)})
 
 
 class AddCommentView(View):
@@ -54,3 +54,22 @@ class RemoveLikeView(View):
 
         return redirect(f'/{pk}')
 
+
+class PrivacyPolicyView(View):
+    template_name = 'includes/privacy_policy.html'
+
+    def get(self, request, *args, **kwargs):
+        context = {
+            'site_name': "FactsNature",
+        }
+        return render(request, self.template_name, context)
+
+
+class ContactsView(View):
+    template_name = 'includes/contacts.html'
+
+    def get(self, request, *args, **kwargs):
+        context = {
+            'site_name': "FactsNature",
+        }
+        return render(request, self.template_name, context)

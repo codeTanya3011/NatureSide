@@ -1,64 +1,263 @@
+.content_nav {
+  display: flex;
+  justify-content: center; /* Центрує navbar по горизонталі */
+}
+
 .navbar {
-    display: flex; 
-    justify-content: space-around; /* По краям */
-    align-items: center; /*По вертикалі */
-    background-color: #f2e1f4; /* Фон */
-    padding: 15px 20px; /* Внутрішні відступи */
-    font-size: 16px; /* Шрифт*/
+  display: flex;
+  height: 50px;
+  width: 60%; /* або max-width: 800px */
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #e4c4ed;
+  padding: 10px 10px;
+  font-size: 22px;
 }
 
 .navbar a {
-    color: #400c45; /* Колір тексту */
-    text-decoration: none; /* Підкреслювання - */
-    font-size: 18px;
-    padding: 10px 15px; /* Внутрішні відступи */
-    border-radius: 5px; /* Заокруглені угли */
+  color: #400c45;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 10px;
+  border-radius: 10px;
 }
 
 .navbar a:hover {
-    background-color: #a458b9; /*Колір при наведенні */
+  background-color: #d79de8;
 }
 
-
 .project {
-    display: flex; /* В рядок */
-    flex-wrap: wrap; /* Перенесення на новий рядок, якщо не міститься */
-    gap: 20px; /* Відступи між елементами */
-    padding: 20px; /* Внутр. відступи контейнера */
-    justify-content: center; /* Виравнювання по центру */
+  display: flex; /* В рядок */
+  flex-wrap: wrap; /* Перенесення на новий рядок, якщо не міститься */
+  gap: 25px; /* Відступи між елементами */
+  padding: 0 25px; /* Внутр. відступи контейнера */
+  justify-content: center; /* Виравнювання по центру */
 }
 
 .item {
-    background: #f2e1f4; /* Фон для карток */
-    border-radius: 10px; /* Заокруглення */
-    padding: 15px;
-    width: 600px; /* Фіксована ширина */
-    text-align: center; /* Центрування */
-}
-
-.text {
-    margin-top: 10px;
+  background: #f2e1f4; /* Фон для карток */
+  border-radius: 10px; /* Заокруглення */
+  padding: 25px 25px;
+  max-width: 600px; /* Фіксована ширина */
+  text-align: center; /* Центрування */
 }
 
 img, video, audio {
-    width: 100%; /* Адаптив відео */
-    border-radius: 8px;
+  width: 100%; /* Адаптив відео */
+  border-radius: 10px;
 }
 
 .container {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    width: 100%; /* На всю ширину */
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  width: 100%; /* На всю ширину */
 }
 
 .item {
-    display: flex;
-    flex-direction: column; /* Розташовуємо елементи один під одним */
-    gap: 15px; /* Встановлює відступи між елементами */
+  display: flex;
+  flex-direction: column; /* Розташовуємо елементи один під одним */
+  gap: 15px; /* Встановлює відступи між елементами */
 }
 
 .media-item {
-    max-width: 100%; /* Максимальна ширина елементів */
-    margin: 0 auto; /* Центрування елементів */
+  max-width: 100%; /* Максимальна ширина елементів */
+  margin: 0 auto; /* Центрування елементів */
 }
+
+
+/* Відступи та виравнювання */
+.item,
+.likes,
+.comment-form,
+.view-comment {
+  max-width: 800px;
+  margin: 30px auto;
+  text-align: center;
+  padding: 15px 15px;
+  border-radius: 10px;
+  background-color: #ecdff5;
+}
+/* 
+.audio,
+.video,
+.img {
+  max-width: 80%;
+  margin: 20px auto;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f9f4fc;
+} */
+
+.description {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.author {
+  font-size: 16px;
+  color: #7c5a80;
+  margin-bottom: 10px;
+}
+
+.likes a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #d1a7d0;
+  color: rgb(244, 236, 245);
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background-color 0.5s ease;
+}
+
+.likes a:hover {
+  background-color: #963d94;
+}
+
+/* Форма коментаря */
+.comment form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.comment label {
+  font-weight: bold;
+}
+
+.comment textarea,
+.comment input[type="text"],
+.comment input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #f2e8f5;
+  border-radius: 10px;
+  resize: vertical;
+}
+
+.comment input[type="submit"] {
+  background-color: #3a1836;
+  color: rgb(227, 206, 241);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.comment input[type="submit"]:hover {
+  background-color: #552b5a;
+}
+
+/* Коментарії */
+.view-comment {
+  margin-top: 15px;
+  background-color: #fff;
+  border-left: 5px solid #a25eb5;
+  padding: 10px;
+}
+
+.comment {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: #eddff6;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.comment h5 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #34183a;
+}
+
+.comment form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.comment label {
+  font-weight: 600;
+  color: #33183a;
+  font-size: 16px;
+}
+
+.comment textarea,
+.comment input[type="text"],
+.comment input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #eedff1;
+  border-radius: 10px;
+  transition: border-color 0.5s ease;
+}
+
+.comment textarea:focus,
+.comment input[type="text"]:focus,
+.comment input[type="email"]:focus {
+  border-color: #a25eb5;
+  outline: none;
+}
+
+.comment input[type="submit"] {
+  background-color: #a15eb5;
+  color: rgb(250, 236, 252);
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.comment input[type="submit"]:hover {
+  background-color: #893d96;
+  transform: scale(1.00);
+}
+
+.project_two {
+  width: 80%;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #f8f4fb;
+  border-radius: 10px;
+  text-align: center;
+  color: #3a1836;
+}
+
+.project_two h2 {
+  font-size: 20px;
+}
+
+.item_two {
+  width: 80%;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #f8f4fb;
+  border-radius: 10px;
+  text-align: center;
+  color: #3a1836;
+  font-size: 26px;
+}
+
+.likes {
+  font-size: 22px;
+  display: inline-block;
+  padding: 15px 30px;
+  margin-top: 10px;
+  background-color: #9e5eb5;
+  color: rgb(235, 212, 237);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.5s ease;
+}
+

@@ -1,10 +1,119 @@
+.content_footer {
+  display: flex;
+  justify-content: center;
+}
 
-.footer {
-    display: flex; 
-    justify-content: space-between; /* По краям */
-    align-items: center; /* По вертикалі */
-    background-color: #f2e1f4; /* Фон */
-    padding: 15px 20px;
-    text-align: center;
-    font-size: 16px; /* Шрифт розмір */
+.footer-wrapper {
+  display: flex;
+  justify-content: space-around; /* Центрує футер */
+  margin-top: 20px;
+}
+
+.main-footer {
+  display: flex;
+  justify-content: space-around; /* Рівномірний простір */
+  align-items: center;
+  width: 50%;
+  height: 50px;
+  background-color: #e4c4ed;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  color: #3a1836;
+}
+
+.main-footer img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.main-footer a {
+  color: #772676;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.main-footer a:hover {
+  background-color: #d79de8;
+}
+
+.social-links {
+  display: flex;
+  gap: 30px;
+}
+
+.social-links img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.copy-right {
+  color: #772676;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contacts ul li {
+  color: #4b0e45;
+  list-style-type: none;
+  font-size: 1em;
+}
+  
+.contacts a {
+  display: inline-block;
+  color: #4b0e45;
+  transition: transform 0.5s ease, color 0.5s ease; /* Плавний перехід */
+}
+  
+.contacts a:hover {
+  color: #104262;
+  transform: scale(1.0); /* Збільшення при наведенні */
+}
+
+.information {
+  display: inline-block;
+  justify-content: center;
+  font-size: 16px;
+  background-color: #fbeaf9; /* Фон */
+  margin: 0px 100px;
+  padding: 50px 50px; /* Внутр. відступи */
+  border-radius: 10px;
+}
+  
+.information h1 {
+  text-align: center;
+  color: #221121;
+  font-size: 2em; /* big текст */
+  border-bottom: 2px solid #772676;
+  padding-bottom: 10px;
+}
+  
+.information h2 {
+  color: #3a1836;
+  font-size: 1.6em;
+  padding-bottom: 10px;
+}
+  
+.information p,
+.information ul {
+  font-size: 1.2em;
+  color: #c673d1;
+  list-style-type: disc;
+}
+  
+.information ul li {
+  margin-bottom: 10px;
+}
+  
+.information a {
+  text-decoration: none;
+  color: #3a1836;
+  font-size: 1em;
+  padding-bottom: 10px;
 }

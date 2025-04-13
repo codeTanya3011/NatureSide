@@ -1,20 +1,31 @@
 {% load static %}
+
+
 <html>
 <head>
 	<title>FactsNature</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 	<link rel="stylesheet" href="{% static 'css/my_styles.css' %}" type="text/css" media="all"/>
-	<link rel="shortcut icon" href="{% static 'images/favicon_ico.svg' %}">
+	<link rel="stylesheet" href="{% static 'css/my_footer.css' %}" type="text/css" media="all"/>
+	<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
 </head>
 <body>
 <div class="shell">
 	<div class="border">
-
+    <div class="content_nav">
 		<div class="navbar">
+            <a href="/">
+                <img class="images" src="{% static 'images/nature.svg' %}" 
+                    alt="Home Icon" width="32" height="32">
+            </a>
 			<a href="/">Головна сторінка</a>
+			<a href="mailto:t2950198@gmail.com">
+				<img class="images" src="{% static 'images/gmail_1.png' %}" 
+                    alt="Home Icon" width="32" height="32">
+			</a>
 			<a href="/admin">Адмін панель</a>
 		</div>
-
+    </div>
 		<div id="main">
 			<div id="content" class="center">
 				<hr><h2 style="text-align: center; color: #400c45;">Публікації</h2>
@@ -40,7 +51,7 @@
 							</audio>
 						{% endif %}
 				
-						<div class="text">
+						<div class="text" style='font-size: 20px;'>
 							<hr>
 							<h2><a href="{{ publication.id }}">{{ publication.title }}</a></h2>
 							<p>{{ publication.description }}</p>
@@ -51,16 +62,12 @@
 					{% endfor %}
 				</div>
 				
-
 			<hr><div class="cl">&nbsp;</div>
 		</div>
-
-
 	</div>
-
-	<div class="footer">
-		<p class="copy-right">Copyright &copy; NatureFacts 2025</p>
-	</div>
+    <div class="main-footer">
+        {% include "includes/footer.html" %}
+    </div>
 </div>
 </body>
 </html>
